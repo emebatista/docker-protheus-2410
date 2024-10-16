@@ -1,7 +1,7 @@
 services:
     db:
-        image: emebatista/postgres-2310:latest
-        container_name: postgresql-2310
+        image: emebatista/postgres-2410:latest
+        container_name: postgresql-2410
         platform: linux/amd64
         user: root
         ports:
@@ -12,8 +12,8 @@ services:
             - protheus
         restart: always
     license:
-        image: emebatista/license-server-2310:latest
-        container_name: license-server-2310
+        image: emebatista/license-server-2410:latest
+        container_name: license-server-2410
         platform: linux/amd64
         ports:
             - "8020:80"
@@ -23,6 +23,7 @@ services:
             - "/dev/mem:/dev/mem"
         cap_add:
             - sys_rawio
+        privileged: true
         ulimits:
             core:
                 soft: -1
@@ -37,9 +38,9 @@ services:
             - protheus
         restart: always
     dbaccess:
-        image: emebatista/protheus-dbaccess-2310:latest
+        image: emebatista/protheus-dbaccess-2410:latest
         platform: linux/amd64
-        container_name: dbaccess-2310
+        container_name: dbaccess-2410
         ports:
           - "7890:7890"
         env_file:
@@ -61,9 +62,9 @@ services:
             - db
             - license
     protheus:
-        image: emebatista/protheus-2310:latest
+        image: emebatista/protheus-2410:latest
         platform: linux/amd64
-        container_name: protheus-2310
+        container_name: protheus-2410
         ports:
             - "1234:1234"
             - "4321:4321"
@@ -93,9 +94,9 @@ services:
         depends_on:
             - dbaccess
     smartview:
-        image: emebatista/smartview-2310:latest
+        image: emebatista/smartview-2410:latest
         platform: linux/amd64
-        container_name: smartview-2310
+        container_name: smartview-2410
         ports:
             - "7017:7017"
             - "7019:7019"

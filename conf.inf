@@ -7,3 +7,4 @@ POSTGRES_PASSWORD=protheus
 DB_Name=protheus
 DB_User=protheus
 DB_Password=protheus
+   
