@@ -1,7 +1,6 @@
 # docker-protheus-2410
 Protheus 2410
 
-<h2>Protheus 12.1.2310  - Postgres </h2>
 <h2>Protheus 12.1.2410  - Postgres </h2>
 
 Procedimentos:
