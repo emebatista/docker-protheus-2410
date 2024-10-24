@@ -4,7 +4,7 @@ Protheus 2410
 <h2>Protheus 12.1.2410  - Postgres </h2>
 
 Procedimentos:
-1. Instalar o <b>Docker</b> ( https://www.docker.com/products/docker-desktop/ ). <b>IMPORTANTE:</b> Se você possui um Mac com chip M1/M2, desabilite no Docker a opção "Use Rosetta for x86_64/amd64 emulation on Apple Silicon", caso contrário os conteiners podem não subir. 
+1. Instalar o <b>Docker</b> ( https://www.docker.com/products/docker-desktop/ ). <b>IMPORTANTE:</b> Se vocÃª possui um Mac com chip M1/M2, desabilite no Docker a opï¿½ï¿½o "Use Rosetta for x86_64/amd64 emulation on Apple Silicon", caso contrï¿½rio os conteiners podem nï¿½o subir. 
 2. Criar uma pasta e copiar os arquivos <b>docker-compose.yml</b> ( https://github.com/emebatista/docker-protheus-2410/blob/main/docker-compose.yml )  e <b>conf.inf</b> ( https://github.com/emebatista/docker-protheus-2410/blob/main/conf.inf )
 3. Abrir o terminal dentro da pasta criada e que contÃ©m os dois arquivos anteriores e dar os comandos: <br>
 ```docker login``` <br>
@@ -30,3 +30,4 @@ Notas:
 ```docker-compose up -d --no-deps --force-recreate db```<br>
 ```docker-compose up -d --no-deps --force-recreate smartview```<br>
 ```docker-compose up -d --no-deps --force-recreate dbaccess```<br>
+4) Se jÃ¡ possuir conteiners com a versÃ£o 2310, Ã© preciso que estas vm estejam paradas para que as da versÃ£o 2410 possam subir, uma vez que usam as mesmas portas.
