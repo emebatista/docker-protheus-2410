@@ -93,6 +93,37 @@ services:
         restart: always
         depends_on:
             - dbaccess
+    protheus-exclusivo:
+        image: emebatista/protheus-2410-exclusivo:latest
+        platform: linux/amd64
+        container_name: protheus-2410-exclusivo
+        ports:
+            - "1235:1235"
+            - "4322:4322"
+        environment:
+            - APPSERVER_DATABASE=POSTGRES
+        volumes:
+            - ./volume/data/system_temp:/protheus12/protheus_data/system_temp
+        devices:
+            - "/dev/mem:/dev/mem"
+        cap_add:
+            - sys_rawio
+        privileged: true
+        ulimits:
+            core:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+            stack:
+                soft: 1048576
+                hard: 1048576
+        networks:
+            - protheus
+        restart: always
+        depends_on:
+            - dbaccess
     smartview:
         image: emebatista/smartview-2410:latest
         platform: linux/amd64
