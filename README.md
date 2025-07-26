@@ -31,3 +31,5 @@ Notas:
 ```docker-compose up -d --no-deps --force-recreate smartview```<br>
 ```docker-compose up -d --no-deps --force-recreate dbaccess```<br>
 4) Se já possuir conteiners com a versão 2310, é preciso que estas vm estejam paradas para que as da versão 2410 possam subir, uma vez que usam as mesmas portas.
+5) Existe um conteiner para acesso exclusivo (protheus-2410-exclusivo), que não sobe serviços de Rest e permite alterar a base em modo exclusivo.
+Acesse a porta 4322 para o appserver de modo excluisivo. Antes, porém, pare a execução da vm 'protheus'.
